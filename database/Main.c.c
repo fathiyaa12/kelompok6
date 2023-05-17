@@ -61,3 +61,13 @@ char answer[2];
     }
     printf("Skor Anda: %d\n", score);
 }
+int main(int argc, char *argv[])
+{
+    if (argc != 3)
+    {
+        printf("gagal masuk");
+    }
+    char usernameinput[20], passwordinput[20];
+    strcpy(usernameinput, argv[1]);
+    strcpy(passwordinput, argv[2]);
+    //untuk memasukan password ke dalam file bin
