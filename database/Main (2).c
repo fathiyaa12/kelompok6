@@ -25,3 +25,23 @@ void play_game()
     printf("Score Anda = %d\n", score);
     for (int i = 0; i < 5; i++)
 { printf("Pertanyaan %d:\n%s", i + 1, questions[i]);
+ 
+ 
+ char answer[2];
+scanf("%s", answer);
+if (strcmp(answer, answers[i]) == 0)
+{
+score += points[i];
+printf("-----------------------\n");
+printf("Jawaban Anda benar!\n");
+printf("-----------------------\n");
+}
+else
+{
+printf("-----------------------\n");
+printf("Jawaban Anda salah.\n");
+printf("-----------------------\n");
+}
+}
+printf("Skor Anda: %d\n", score);
+}
