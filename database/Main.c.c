@@ -14,4 +14,32 @@ void play_game()
         "Apakah huruf kendaraan bermotor untuk provinsi Aceh?\nA. BL\nB. BB\nC. BK\nD. B\n",
         "Apakah ibukota negara Laos?\nA. Kuala Lumpur\nB. Manila\nC. Kamboja\nD. Viantine\n",
         "Hubungan timbal balik antara makhluk hidup dan lingkungannya disebut?\nA. Komunitas\nB. Ekosistem\nC. Populasi\nD. Adaptasi\n"};
-    
+    char *answers[] = {
+        "B",
+        "A",
+        "C",
+        "B",
+        "D",
+        "B",
+        "C",
+        "A",
+        "D",
+        "B"};
+    int score = 0;
+    int points[] = {
+        30,
+        20,
+        10,
+        10,
+        10,
+        10,
+        20,
+        10,
+        10,
+        10};
+
+    printf("Score Anda = %d\n", score);
+
+    for (int i = 0; i < 10; i++)
+    {
+        printf("Pertanyaan %d:\n%s", i + 1, questions[i]);
