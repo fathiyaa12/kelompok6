@@ -71,3 +71,37 @@ int main(int argc, char *argv[])
     strcpy(usernameinput, argv[1]);
     strcpy(passwordinput, argv[2]);
     //untuk memasukan password ke dalam file bin
+/**FILE *fpw = fopen("database/login.bin", "wb");
+    char login[20] = "Fathiya@Contoh";
+    fwrite(login, sizeof(char), sizeof(login) / sizeof(char), fpw);
+    fclose(fpw);*/
+    FILE *fpr;
+    if ((fpr = fopen("database/login.bin", "rb")) == NULL)
+    {
+        printf("Couldn't open database");
+        return EXIT_FAILURE;
+    }
+    char akun[20];
+    fread(akun, sizeof(akun), sizeof(akun) / sizeof(char), fpr);
+    fclose(fpr);
+    char *string[3];
+    char username[20], password[20];
+    int ctrl = 0;
+    string[0] = strtok(akun, "@");
+    while (string[ctrl++] != NULL)
+    {
+        string[ctrl] = strtok(NULL, "@");
+    }
+    strcpy(username, string[0]);
+    strcpy(password, string[1]);
+    if (strcmp(usernameinput, username) == 0 && strcmp(passwordinput, password) == 0)
+    {
+        printf("Selamat Datang!! %s\n", username);
+        play_game();
+    }
+    else
+    {
+        printf("Username dan password anda salah");
+    }
+    return 0;
+}
